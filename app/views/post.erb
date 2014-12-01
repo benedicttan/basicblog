@@ -1,0 +1,24 @@
+<form action="/update" method="post" name="edit_post_form">
+  Title:</br>
+  <input type=text id="post_tags" name="title" value="<%= @post.title %>"></br>
+  </br>
+  Body:</br>
+  <textarea name="body" rows=5 cols=20><%= @post.body %></textarea></br>
+  </br>
+  Tags:</br>
+  <input type=text id="post_tags" name="tags" value="<% @post.tags.each do |tag| %>
+    <%= tag.title %>,
+  <% end %>"></br>
+  </br>
+  <input type=hidden name=id value=<%= @post.id %>>
+  <input type=submit value=Update>
+</form>
+
+
+</br>
+
+
+<form action="/delete" method="post">
+  <input type=hidden name=id value=<%= @post.id %>>
+  <input type=submit value="Delete">
+</form>

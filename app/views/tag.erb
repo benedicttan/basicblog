@@ -1,0 +1,21 @@
+<h2>All blog posts:</h2>
+</br>
+<table border=1>
+  <tr align=center>
+    <td><b>ID</b></td>
+    <td><b>Title</b></td>
+    <td><b>Body</b></td>
+    <td><b>Tags</b></td>
+  </tr>
+  <% all_posts.each do |post| %>
+  <tr>
+    <td><%= post.id %></td>
+    <td><a href="/post/<%= post.id %>"><%= post.title %></a></td>
+    <td><%= post.body %></td>
+    <td><% post.tags.each do |tag| %>
+        <%= tag.title %>&nbsp;&nbsp;&nbsp;
+        <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
